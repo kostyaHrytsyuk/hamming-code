@@ -9,7 +9,7 @@ def get_message():
             n = input("Enter a binary message with the length of 4: ")
             s = set(n)
             check_set = {'0', '1'}
-            if len(n) == 4 and s == check_set:
+            if len(n) == 4 and check_set >= s:
                 mes = [int(i) for i in n]
                 return mes
             else:
@@ -72,7 +72,7 @@ def get_corrected_bit_from_message(n, message):
     Returns value on corrected position from message for Hamming (7,4) code
 
     >>> get_corrected_bit_from_message(3, [1,2,5,4])
-    5
+    2
     >>> get_corrected_bit_from_message(9, [1,2,5,4])
     4
     """
@@ -90,9 +90,9 @@ def convert_list_to_string(l):
     Concatenates list l to str
 
     >>> convert_list_to_string([1, 2, 3])
-    123
+    '123'
     >>> convert_list_to_string(['h','e', 'y', '!'])
-    hey!
+    'hey!'
     """
     return ''.join(map(str, l))
 
@@ -107,7 +107,7 @@ def show_result(message, code):
     """
     print("Hamming (7,4) code for message ", end='')
     print(convert_list_to_string(message), end='')
-    print(" is: ", convert_list_to_string(code))
+    print(" is:", convert_list_to_string(code))
 
 
 if __name__ == "__main__":
