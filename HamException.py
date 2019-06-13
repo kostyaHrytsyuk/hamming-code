@@ -1,4 +1,4 @@
-class HamException(BaseException):
+class HamCodeException(BaseException):
     """
     Custom exceptions for handling errors in HemCode class
 

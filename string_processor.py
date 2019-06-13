@@ -16,13 +16,13 @@ def get_message():
             if len(n) == 4 and check_set >= s:
                 for i in n:
                     if not str.isdigit(i):
-                        raise HamException
+                        raise HamException.HamCodeException
                     else:
                         mes.append(int(i))
                 return mes
             else:
                 print("You entered the wrong value ", n)
-        except HamException:
+        except HamException.HamCodeException:
             print("You entered the non-binary value")
 
 
